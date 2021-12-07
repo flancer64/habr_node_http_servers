@@ -1,0 +1,7 @@
+# ignores
+/.idea/
+/pub/*
+
+# excludes
+!/pub/index.html
+!/pub/favicon.ico
