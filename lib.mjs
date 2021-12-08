@@ -19,6 +19,29 @@ const {
     HTTP_STATUS_OK,
 } = H2;
 
+const MIME = {
+    'bin': 'application/octet-stream',
+    'css': 'text/css',
+    'gif': 'image/gif',
+    'htm': 'text/html',
+    'html': 'text/html',
+    'ico': 'image/vnd.microsoft.icon',
+    'jpeg': 'image/jpeg',
+    'jpg': 'image/jpeg',
+    'js': 'text/javascript',
+    'json': 'application/json',
+    'mjs': 'text/javascript',
+    'mp3': 'audio/mpeg',
+    'mp4': 'video/mp4',
+    'pdf': 'application/pdf',
+    'png': 'image/png',
+    'svg': 'image/svg+xml',
+    'txt': 'text/plain',
+    'woff': 'font/woff',
+    'woff2': 'font/woff2',
+    'xml': 'text/xml',
+};
+
 const FILE_ICON = 'favicon.ico';
 const FILE_INDEX = 'index.html';
 const HEAD_FILENAME = 'upload-filename'; // HTTP header to get uploading filename
@@ -38,36 +61,7 @@ const WEB_ROOT = getWebRoot(); // path to './pub/' folder
 function getMimeType(filename) {
     const ext = filename.substring(filename.lastIndexOf(".") + 1);
     const norm = (typeof ext === 'string') ? ext.toLowerCase() : null;
-    switch (norm) {
-        case 'css':
-            return 'text/css';
-        case 'htm':
-        case 'html':
-            return 'text/html';
-        case 'ico':
-            return 'image/vnd.microsoft.icon';
-        case 'jpeg':
-        case 'jpg':
-            return 'image/jpeg';
-        case 'js':
-        case 'mjs':
-            return 'text/javascript';
-        case 'json':
-            return 'application/json';
-        case 'mp3':
-            return 'audio/mpeg';
-        case 'mp4':
-            return 'video/mp4';
-        case 'pdf':
-            return 'application/pdf';
-        case 'png':
-            return 'image/png';
-        case 'txt':
-            return 'text/plain';
-        case 'xml':
-            return 'text/xml';
-    }
-    return 'application/octet-stream';
+    return MIME[norm] ?? MIME['bin'];
 }
 
 /**
