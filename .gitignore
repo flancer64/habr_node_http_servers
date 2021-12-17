@@ -1,5 +1,6 @@
 # ignores
 /.idea/
+/other/
 /pub/*
 
 # excludes
