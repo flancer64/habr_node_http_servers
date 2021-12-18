@@ -65,9 +65,9 @@
         // VARS
         const FILE_ICON = 'favicon.ico';
         const FILE_INDEX = 'index.html';
-        const HEAD_FILENAME = 'upload-filename'; // HTTP header to send uploading filename to server
+        const HEAD_FILENAME = 'teq-upload-filename'; // HTTP header to send uploading filename to server
         const SSE_CLOSE = 'close'; // SSE marker that connection is closed
-        const URL_REMOVE = '/remove/';
+        const URL_REMOVE = '/api/@flancer64/habr_node_http_servers/remove';
         const URL_SSE = '/sse/';
         const URL_UPLOAD = '/upload/';
 
@@ -127,11 +127,17 @@
                 if (one?.checked) files.push(one.value);
             const res = await fetch(URL_REMOVE, {
                 method: 'POST',
-                body: JSON.stringify({files})
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({data: {files}})
             });
-            if (res.ok)
-                elDisplay.innerHTML = await res.text();
-            else
+            if (res.ok) {
+                const json = await res.json();
+                /** @type {Demo_Shared_WAPI_Remove.Response} */
+                const data = json.data;
+                elDisplay.innerHTML = `Total files removed: ${data.removed}.`;
+            } else
                 elDisplay.innerHTML = 'Some error is occurred.';
             setTimeout(() => {
                 elDisplay.innerHTML = '';
@@ -165,7 +171,8 @@
                 }, 2000);
                 doList();
             } else {
-                elLblUpload.innerText = 'Some error is occurred.';
+                const msg = await res.text();
+                elLblUpload.innerText = `Some error is occurred: '${msg}'`;
             }
         }
 

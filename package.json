@@ -1,0 +1,31 @@
+{
+  "name": "@flancer64/habr_node_http_servers",
+  "version": "0.1.0",
+  "description": "Demo project for Habr publication.",
+  "homepage": "TODO",
+  "bugs": {
+    "url": "https://github.com/flancer64/habr_node_http_servers/issues",
+    "email": "alex@flancer32.com"
+  },
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Alex Gusev",
+    "email": "alex@flancer64.com",
+    "url": "https://github.com/flancer64"
+  },
+  "repository": "github:flancer64/habr_node_http_servers",
+  "scripts": {
+    "help": "node ./bin/tequila.mjs -h",
+    "http1": "node ./bin/tequila.mjs web-server-start -1",
+    "http2": "node ./bin/tequila.mjs web-server-start",
+    "https": "node ./bin/tequila.mjs web-server-start -k ./key.pem -c ./cert.pem",
+    "stop": "node ./bin/tequila.mjs web-server-stop",
+    "version": "node ./bin/tequila.mjs core-version"
+  },
+  "dependencies": {
+    "@teqfw/core": "github:teqfw/core",
+    "@teqfw/di": "github:teqfw/di",
+    "@teqfw/web": "github:teqfw/web"
+  },
+  "devDependencies": {}
+}

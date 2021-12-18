@@ -1,8 +1,13 @@
 # ignores
+/**/local.json
 /.idea/
+/node_modules/
 /other/
-/pub/*
+/package-lock.json
+/var/*.pid
+/var/store/**
+/web/*
 
 # excludes
-!/pub/index.html
-!/pub/favicon.ico
+!/web/index.html
+!/web/favicon.ico

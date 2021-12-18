@@ -1,0 +1,14 @@
+{
+  "@teqfw/di": {
+    "autoload": {
+      "ns": "Demo",
+      "path": "./src"
+    }
+  },
+  "@teqfw/web": {
+    "services": [
+      "Demo_Back_WAPI_Remove"
+    ],
+    "sse": ["Demo_Back_SSE_Stream"]
+  }
+}
