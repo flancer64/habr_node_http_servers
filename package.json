@@ -13,9 +13,7 @@
   "repository": "github:flancer64/habr_node_http_servers",
   "scripts": {
     "help": "node ./bin/tequila.mjs",
-    "http1": "node ./bin/tequila.mjs web-server-start -1 -p 8080",
-    "http2": "node ./bin/tequila.mjs web-server-start -p 8080",
-    "start": "node ./bin/tequila.mjs web-server-start -1 -p 8080",
+    "start": "node ./bin/tequila.mjs web-server-start -p 8080",
     "startup-logs": "node ./bin/tequila.mjs core-startup-logs",
     "stop": "node ./bin/tequila.mjs web-server-stop",
     "version": "node ./bin/tequila.mjs core-version"
