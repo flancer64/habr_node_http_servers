@@ -1,8 +1,10 @@
-# ignores
+/**/node_modules/
+/**/own_modules/
+/**/package-lock.json
+/**/ttttest.*
 /.idea/
+/atlassian-ide-plugin.xml
+/cfg/local.json
 /other/
-/pub/*
-
-# excludes
-!/pub/index.html
-!/pub/favicon.ico
+/tmp/
+/var/*.pid
