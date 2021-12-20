@@ -13,15 +13,11 @@
   "repository": "github:flancer64/habr_node_http_servers",
   "scripts": {
     "help": "node ./bin/tequila.mjs",
-    "start": "node ./bin/tequila.mjs web-server-start -p 8080",
-    "startup-logs": "node ./bin/tequila.mjs core-startup-logs",
-    "stop": "node ./bin/tequila.mjs web-server-stop",
-    "version": "node ./bin/tequila.mjs core-version"
+    "start": "node ./bin/tequila.mjs app-server"
   },
   "dependencies": {
-    "@teqfw/core": "0.6.0",
-    "@teqfw/di": "0.10.0",
-    "@teqfw/http2": "0.3.0",
-    "@teqfw/web": "0.6.1"
+    "@teqfw/core": "0.7.0",
+    "@teqfw/di": "0.11.0",
+    "@teqfw/web": "0.7.0"
   }
 }

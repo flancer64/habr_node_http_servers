@@ -1,0 +1,22 @@
+{
+  "@teqfw/core": {
+    "commands": [
+      "Gae_Back_Cli_Start"
+    ]
+  },
+  "@teqfw/di": {
+    "autoload": {
+      "ns": "Gae",
+      "path": "./sources"
+    }
+  },
+  "@teqfw/web": {
+    "excludes": {
+      "handlers": [
+        "TeqFw_Web_Back_Handler_SSE",
+        "TeqFw_Web_Back_Handler_Upload",
+        "TeqFw_Web_Back_Handler_WAPI"
+      ]
+    }
+  }
+}
